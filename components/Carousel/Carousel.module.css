@@ -1,0 +1,124 @@
+.pageContainer {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.pageContainer svg {
+  font-size: 4vmax;
+  margin: 0 2vmax;
+}
+
+.buttonLeft {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  cursor: pointer;
+  z-index: 2;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.buttonRight {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  cursor: pointer;
+  z-index: 2;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.buttonLeft:active,
+.buttonRight:active {
+  transition: 0.4s;
+  color: rgb(94, 94, 94);
+}
+
+.page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-x: scroll;
+  white-space: nowrap;
+  scrollbar-width: none;
+  padding: 0 4%;
+  pointer-events: none;
+}
+
+.cardContainer {
+  position: relative;
+  display: inline-block;
+  width: 33%;
+  height: 100%;
+}
+
+.card {
+  position: absolute;
+  left: 15%;
+  top: 15%;
+  height: 70%;
+  width: 70%;
+  border: 1.5px solid whitesmoke;
+  border-radius: 20px;
+}
+
+.card.marginRight {
+  opacity: 0;
+  transform: translateX(5dvw);
+  filter: blur(5px);
+}
+
+.card.marginLeft {
+  opacity: 0;
+  transform: translateX(-5dvw);
+  filter: blur(5px);
+}
+
+.card.activateMiddle {
+  left: 10%;
+  top: 10%;
+  height: 80%;
+  width: 80%;
+  border-color: rgb(143, 44, 235);
+  box-shadow: 0 0 3vmin blueviolet, 0 0 4vmin blueviolet, 0 0 5vmin blueviolet;
+}
+
+.card.activate {
+  transition: 0.5s ease;
+  left: 10%;
+  top: 10%;
+  height: 80%;
+  width: 80%;
+  border-color: rgb(143, 44, 235);
+  box-shadow: 0 0 3vmin blueviolet, 0 0 4vmin blueviolet, 0 0 5vmin blueviolet;
+}
+
+.card.deactivate {
+  transition: 0.5s ease;
+}
+
+.card.disappearLeft {
+  transition: 0.5s ease;
+  opacity: 0;
+  transform: translateX(-5dvw);
+  filter: blur(5px);
+}
+
+.card.disappearRight {
+  transition: 0.5s ease;
+  opacity: 0;
+  transform: translateX(5dvw);
+  filter: blur(5px);
+}
+
+.card.appear {
+  transition: 0.5s ease;
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(0dvw);
+}
+
+@media (max-aspect-ratio: 1.2/1) {
+  .cardContainer {
+    width: 40cqh;
+  }
+}

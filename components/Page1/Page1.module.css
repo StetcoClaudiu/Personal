@@ -1,0 +1,60 @@
+body {
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.page {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(15, 15, 15);
+  scroll-snap-align: start;
+}
+
+.pageContent {
+  height: 100%;
+  width: 90%;
+  margin: 0% 5%;
+  position: relative;
+}
+
+.title {
+  font-size: 8vmin;
+  text-align: center;
+  padding: 4dvh 0%;
+}
+
+.description {
+  font-size: 4vmin;
+}
+
+.scrollMessage {
+  font-weight: normal;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 3vmin;
+  color: rgb(94, 94, 94);
+  transition: 0.5s ease;
+}
+
+.scrollMessage.glow {
+  color: rgb(205, 205, 205);
+}
+
+.scrollMessage.hide {
+  opacity: 0;
+}
+
+.icon {
+  font-size: 4vmin;
+}
+
+@media (min-aspect-ratio: 1/1.3) and (max-aspect-ratio: 1/0.6) {
+  .title {
+    font-size: 5.5vmin;
+  }
+  .description {
+    font-size: 3.5vmin;
+  }
+}

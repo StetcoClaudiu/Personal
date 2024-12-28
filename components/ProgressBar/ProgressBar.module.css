@@ -1,0 +1,16 @@
+.total {
+  position: relative;
+  width: 2px;
+  height: 100%;
+  background-color: rgb(94, 94, 94);
+}
+
+.progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  background-color: blueviolet;
+  transition: 0.3 ease;
+  box-shadow: 0 0 3vmin blueviolet, 0 0 4vmin blueviolet, 0 0 5vmin blueviolet;
+}

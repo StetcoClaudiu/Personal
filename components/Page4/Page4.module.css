@@ -1,0 +1,102 @@
+.page {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(15, 15, 15);
+  scroll-snap-align: start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.descriptionContainer {
+  height: 100%;
+  width: 100%;
+  color: rgb(205, 205, 205);
+  overflow: hidden;
+}
+
+.title {
+  width: 100%;
+  font-size: 5vmin;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.description {
+  font-size: 3vmin;
+  margin: 0% 4%;
+}
+
+.button {
+  width: 20%;
+  height: 6%;
+  border: 0.5vmin solid rgb(205, 205, 205);
+  margin-top: 10%;
+  border-radius: 10px;
+  margin-left: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s ease;
+  font-size: 2vmin;
+}
+
+.button:hover {
+  color: rgb(143, 44, 235);
+  border-color: rgb(143, 44, 235);
+  box-shadow: 0 0 1vmin blueviolet, 0 0 2vmin blueviolet, 0 0 3vmin blueviolet;
+}
+
+.button:active {
+  color: rgb(100, 31, 164);
+  border-color: rgb(100, 31, 164);
+  box-shadow: 0 0 0.5vmin blueviolet, 0 0 1vmin blueviolet,
+    0 0 1.5vmin blueviolet;
+}
+
+.videoContainer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+.video {
+  width: 90%;
+  height: 100%;
+  margin-left: 5%;
+  object-fit: contain;
+}
+
+.exitButton {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 5;
+  margin: 1% 1%;
+  font-size: 5vmin;
+  cursor: pointer;
+}
+
+@media (max-aspect-ratio: 1/0.8) {
+  .page {
+    grid-template-columns: 100% 0%;
+  }
+  .page > :nth-child(2) {
+    display: none;
+  }
+}
+
+@media (min-aspect-ratio: 1/1.3) and (max-aspect-ratio: 1/0.6) {
+  .title {
+    font-size: 4.5vmin;
+  }
+  .description {
+    font-size: 2.5vmin;
+  }
+}
