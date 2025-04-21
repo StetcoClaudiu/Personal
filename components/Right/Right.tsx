@@ -6,9 +6,10 @@ import Page4 from "../Page4/Page4";
 import ProgressBar from "../ProgressBar/ProgressBar";
 import { useEffect, useRef, useState } from "react";
 import LazyPage from "../LazyPage/LazyPage";
+import Page5 from "../Page5/Page5";
 
 export default function Right() {
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
   const pageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -30,7 +31,7 @@ export default function Right() {
   return (
     <div ref={pageRef} className={styles.page}>
       <div className={styles.ProgressBarContainer}>
-        <ProgressBar total={4} progress={page}></ProgressBar>
+        <ProgressBar total={5} progress={page}></ProgressBar>
       </div>
       <LazyPage index={0} pageRef={pageRef}>
         <Page1 pageRef={pageRef} />
@@ -43,6 +44,9 @@ export default function Right() {
       </LazyPage>
       <LazyPage index={3} pageRef={pageRef}>
         <Page4 />
+      </LazyPage>
+      <LazyPage index={4} pageRef={pageRef}>
+        <Page5 />
       </LazyPage>
     </div>
   );

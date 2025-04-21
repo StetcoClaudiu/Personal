@@ -13,7 +13,7 @@ export default function LazyPage({ children, index, pageRef }: LazyPageProps) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setIsVisible(entry.isIntersecting),
-      { root: pageRef.current, rootMargin: "200px" } // Trigger loading when near the viewport
+      { root: pageRef.current, rootMargin: "200px" }
     );
 
     const pageElement = document.getElementById(`page-${index}`);
@@ -27,7 +27,7 @@ export default function LazyPage({ children, index, pageRef }: LazyPageProps) {
   }, [index, pageRef]);
 
   return (
-    <div id={`page-${index}`} style={{ minHeight: "100vh" }}>
+    <div id={`page-${index}`} style={{ minHeight: "100dvh" }}>
       {isVisible && children}
     </div>
   );

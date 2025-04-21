@@ -1,5 +1,3 @@
-import { ReactSVG } from "react-svg";
-
 export const Content = [
   {
     title: "Python",

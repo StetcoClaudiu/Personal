@@ -1,0 +1,81 @@
+.page {
+  width: 100%;
+  height: 100dvh;
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(15, 15, 15);
+}
+
+.titleContainer {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4vw;
+}
+
+.line {
+  width: 100%;
+  height: 0.1vh;
+  background-color: white;
+}
+
+.imageContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.leftContainer {
+  left: 0;
+  clip-path: polygon(0 0, 52.5% 0, 47.5% 100%, 0 100%);
+  transition: clip-path 1s ease;
+  cursor: pointer;
+}
+
+.rightContainer {
+  right: 0;
+  clip-path: polygon(52.5% 0, 100% 0, 100% 100%, 47.5% 100%);
+  transition: clip-path 1s ease;
+  cursor: pointer;
+}
+
+/* Left side expanded */
+.leftHovered {
+  clip-path: polygon(0 0, 75% 0, 70% 100%, 0 100%);
+  transition: clip-path 1s ease;
+}
+
+/* Left side shrunk (when right is hovered) */
+.leftShrunk {
+  clip-path: polygon(0 0, 25% 0, 20% 100%, 0 100%);
+  transition: clip-path 1s ease;
+}
+
+/* Right side expanded */
+.rightHovered {
+  clip-path: polygon(25% 0, 100% 0, 100% 100%, 20% 100%);
+  transition: clip-path 1s ease;
+}
+
+/* Right side shrunk (when left is hovered) */
+.rightShrunk {
+  clip-path: polygon(75% 0, 100% 0, 100% 100%, 70% 100%);
+  transition: clip-path 1s ease;
+}
+
+.image {
+  width: 80%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 1s ease;
+}
+
+.leftHovered .image,
+.rightHovered .image {
+  filter: grayscale(20%);
+}

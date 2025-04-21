@@ -1,5 +1,4 @@
 "use client";
-import Page1 from "@/components/Page1/Page1";
 import styles from "./page.module.css";
 import { useEffect, useState } from "react";
 import Left from "@/components/Left/Left";
